@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Le Pire Coin</title>
+</head>
+
+<body>
+    <!-- START HERE -->
+
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light custom-color  mb-3">
+        <a class="navbar-brand" href="index.html">Le Pire Coin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto ">
+
+                <li class="nav-item ">
+                    <a class="nav-link text-light" href="#">Announces</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <!-- <div class="container"> -->
+        <div class="row d-flex justify-content-between">
+
+
+            <div class="col-md-4 mb-3 mt-5 m-3">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" data-interval="3000">
+                            <img src="img/volvo-1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-interval="3000">
+                            <img src="img/volvo-2.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-interval="3000">
+                            <img src="img/volvo-3.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-4  ">
+                <p class="new-arrival text-center">NEW</p>
+                <h2>Announce Title</h2>
+                <p>Product code: ISRC2020</p>
+                <p>General Informations: </p>
+                <hr>
+                <p>Price: <b class="price">1500 &euro;</b></p>
+                <p><b>Availability:</b> In stock</p>
+                <p><b>Condition:</b> Used <img src="img/stars.png" class="stars"></p>
+                <p><b>Brand:</b> Kawasaki</p>
+                <label>Quantity:</label>
+                <input type="number" value="1">
+                <button class="btn btn-default cart">Add to cart</button>
+            </div>
+
+            
+
+        </div>
+
+
+    <!-- </div> -->
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer custom-color  text-center  mt-3">
+        <div class="container">
+            <p class="   pt-3"> Le Pire Coin &copy; <span id="year" class="text-light"></span></p>
+        </div>
+    </footer>
+    <!-- JQuery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <!-- <script src="./js/script.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+#############################################################  
+    GET /users (Résultat attendu : users/read-many.php) ;
+    GET /users/1 (Résultat attendu : users/read-one.php).
+#############################################################
+
+    POST /users (Résultat attendu : users/create-one.php) ;
+    PUT /users/1 (Résultat attendu : users/update-one.php) ;
+    DELETE /users/1 (Résultat attendu : users/delete-one.php).
+#############################################################
+
+#############################################################
+    GET : Récupération d'une ressource (ou d'une collection de ressources) ;
+    POST : Ajout d'une ressource ;
+    PUT : Modification d'une ressource ;
+    DELETE : Suppression d'une ressource.
+#############################################################
+
+#############################################################
+    GET /users : Récupération des utilisateurs ;
+    GET /users/1 : Récupération de l'utilisateur ayant l'id 1 ;
+    POST /users : Ajout d'un utilisateur ;
+    PUT /users/1 : Modification de l'utilisateur ayant l'id 1 ;
+    DELETE /users/1 : Suppression de l'utilisateur ayant l'id 1.
+#############################################################

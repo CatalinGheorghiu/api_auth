@@ -1,0 +1,13 @@
+
+
+# GET  http://localhost/Le_pire_coin_API/api/post/read-single.php?id=70
+# GET  http://localhost/Le_pire_coin_API/api/users/read-many.php
+
+GET  http://localhost/API_test/api/users/read-one.php?id=74
+
+
+//Create 
+POST http://localhost/Le_pire_coin_API/api/users/create.php
+
+//Get all users
+GET http://localhost/Le_pire_coin_API/api/users/read-many.php

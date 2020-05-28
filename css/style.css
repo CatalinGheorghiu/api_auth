@@ -1,0 +1,61 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    min-height: 100vh;
+    position: relative;
+    margin: 0;
+    padding-bottom: 100px;
+    /* overflow: hidden; */
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+}
+
+.custom-color {
+    background-color: #71c48a;
+}
+
+.bold {
+    font-weight: 900;
+    color: #71c48a;
+}
+
+.new-arrival {
+    background-attachment: green;
+    width: 50px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.col-md-7 h2 {
+    color: #555555;
+}
+
+.stars {
+    height: 45px;
+}
+
+.price {
+    color: #71c48a;
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.cart {
+    background: #71c48a;
+    font-size: 15px;
+    margin-left: 20px;
+    color: #ffffff;
+}
+
+
