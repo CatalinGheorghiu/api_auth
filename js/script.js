@@ -17,6 +17,7 @@ const menu = document.querySelector(".menu");
 const getData = () => {
     fetch(urlPosts)
         .then((res) => {
+            // console.log(res);
             return res.json();
         })
         .then((data) => {
@@ -25,7 +26,7 @@ const getData = () => {
 
             for (let i = 0; i < posts.length; i++) {
                 let postData = posts[i];
-                // console.log(postData);
+                let imgUrls = postData.img_url.split(",");
 
                 let col = document.createElement("div");
                 col.classList.add(
@@ -46,7 +47,7 @@ const getData = () => {
                 let image = document.createElement("img");
                 image.classList.add("card-img-top");
                 image.setAttribute("style", "height: 250px;");
-                image.setAttribute("src", `${postData.img}`);
+                image.setAttribute("src", `${imgUrls[0]}`);
 
                 let cardBody = document.createElement("div");
                 cardBody.classList.add("card-body");
@@ -87,21 +88,27 @@ const getData = () => {
                 row.append(col);
 
                 btnDetails.addEventListener("click", () => {
-                    console.log(postData);
-                    document.querySelector(".container").innerHTML = " ";
+                    // console.log(postData);
+                    // document.querySelector(".container").innerHTML = " ";
                     document.querySelector(".row").innerHTML = " ";
                     getPost(postData.id);
                 });
             }
         });
 };
-
+getData();
+/**
+ **                             Individual post
+ * */
 const getPost = (id) => {
     fetch(`http://localhost/API_test/post/${id}`)
         .then((res) => {
             return res.json();
         })
         .then((data) => {
+            // console.log(data);
+            const imgUrls = data.img_url.split(",");
+            console.log(imgUrls);
             row.innerHTML = `
             <div class="col-md-7 mb-3 mt-5">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -110,16 +117,15 @@ const getPost = (id) => {
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                     </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active" data-interval="3000">
-                            <img src="img/volvo-1.jpg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item" data-interval="3000">
-                            <img src="img/volvo-2.jpeg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item" data-interval="3000">
-                            <img src="img/volvo-3.jpeg" class="d-block w-100" alt="...">
-                        </div>
+                    <div class="carousel-inner swiper-container">
+                        ${imgUrls.map((element) => {
+                            const elem = element.split(",");
+                            return (
+                                '<div class="carousel-item swiper-wrapper" data-interval="3000"><img src="' +
+                                elem +
+                                '" class="d-block w-100 swiper-slide" alt="..."></div>'
+                            );
+                        })}
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -411,6 +417,34 @@ const getCookie = (cname) => {
     }
     return "";
 };
+
+//Instantiate the SwiperJS class
+var swiper = new Swiper(".swiper-container", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    speed: 2500,
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+    },
+    slidesPerView: "auto",
+    loop: true,
+    coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+});
 
 register.addEventListener("click", registerUser);
 login.addEventListener("click", loginUser);

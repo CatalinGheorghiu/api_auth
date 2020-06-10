@@ -19,6 +19,7 @@ $result = $post->read();
 //Get row count
 $num = $result->rowCount();
 
+
 //Check if any post
 if ($num > 0) {
     //Post array
@@ -27,19 +28,18 @@ if ($num > 0) {
 
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
-
+        
         $post_item = [
             'id' => $id,
             'title' => $title,
             'location' => $location,
             'price' => $price,
-            'img' => $img,
             'name' => $name,
             'user_id' => $user_id,
-            'creation_time' => $creation_time
+            'creation_time' => $creation_time,
+            'img_url' => $img_url,
 
         ];
-
         //Push to "data
         array_push($posts_arr['data'], $post_item);
     }

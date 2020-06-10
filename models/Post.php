@@ -37,14 +37,16 @@ class Post
                         p.id,
                         p.title,
                         p.location,
-                        p.img,
                         p.price,
                         p.user_id,
-                        p.created_at as creation_time
+                        p.created_at as creation_time,
+                        i.img_url
                     FROM
                         $this->table p
                     LEFT JOIN
                         Users u ON p.user_id = u.id
+                    LEFT JOIN
+                        Images i ON p.id = i.post_id
                     ORDER BY 
                         p.created_at
                     DESC
@@ -74,13 +76,15 @@ class Post
                         p.title,
                         p.location,
                         p.price,
-                        p.img,
+                        i.img_url,
                         p.phone_number,
                         p.created_at as creation_time
                     FROM
                         $this->table p
                     LEFT JOIN
                         Users u ON p.user_id = u.id
+                    LEFT JOIN
+                        Images i ON p.id = i.post_id
                     WHERE
                         p.id = ?
                     LIMIT 0,1
@@ -98,7 +102,7 @@ class Post
         //Set properties
         $this->name = $row['name'];
         $this->email = $row['email'];
-        $this->img = $row['img'];
+        $this->img = $row['img_url'];
         $this->title = $row['title'];
         $this->location = $row['location'];
         $this->price = $row['price'];
